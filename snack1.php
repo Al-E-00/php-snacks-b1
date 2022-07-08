@@ -45,6 +45,7 @@ $playedMatch = [
     ]
     ];
 
+    $i = 0;
 ?>
 
 <!DOCTYPE html>
