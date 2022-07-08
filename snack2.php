@@ -60,7 +60,7 @@ if ((is_numeric($age)) == true) {
             </div>
             <div class="mb-3">
                 <label for="ageInput" class="form-label">Age</label>
-                <input type="text" class="form-control <?php echo !$isAgeValid ? 'is-invalid' : '' ?>" id="ageInput" name='age' value='<?php echo $age ?>' />
+                <input type="number" class="form-control <?php echo !$isAgeValid ? 'is-invalid' : '' ?>" id="ageInput" name='age' value='<?php echo $age ?>' />
                 <div class="invalid-feedback">
                     Enter a number
                 </div>
