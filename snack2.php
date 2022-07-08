@@ -17,8 +17,13 @@ if (strlen($name) > 3) {
 }
 
 $isMailValid = false;
-if(str_contains($mail, '.') || str_contains($mail, '@') == false) {
+if ((strpos($mail, '.') && strpos($mail, '@')) == true) {
     $isMailValid = true;
+}
+
+$isAgeValid = false;
+if ((is_numeric($age)) == true) {
+    $isAgeValid = true;
 }
 
 ?>
@@ -47,12 +52,18 @@ if(str_contains($mail, '.') || str_contains($mail, '@') == false) {
             </div>
             <div class="mb-3">
                 <label for="mailInput" class="form-label">Mail</label>
-                <input type="mail" class="form-control" id="mailInput" name='mail' aria-describedby="emailHelp" value='<?php echo $mail ?>' />
+                <input type="mail" class="form-control <?php echo !$isMailValid ? 'is-invalid': '' ?>" id="mailInput" name='mail' aria-describedby="emailHelp" value='<?php echo $mail ?>' />
                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <div class="invalid-feedback">
+                    Invalid email
+                </div>
             </div>
             <div class="mb-3">
                 <label for="ageInput" class="form-label">Age</label>
-                <input type="number" class="form-control" id="ageInput" name='age' value='<?php echo $age ?>' />
+                <input type="text" class="form-control <?php echo $isAgeValid ? 'is-invalid' : '' ?>" id="ageInput" name='age' value='<?php echo $age ?>' />
+                <div class="invalid-feedback">
+                    Enter a number
+                </div>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
