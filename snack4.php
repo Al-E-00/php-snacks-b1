@@ -9,10 +9,8 @@ for ($i; $i < 15; $i++) {
     if (in_array($casualNum, $numberArray) == false) {
         array_push($numberArray, $casualNum);
     } else {
-        $i--; 
+        $i--;
     }
 }
 
 var_dump($numberArray);
-
-?>

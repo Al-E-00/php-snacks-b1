@@ -35,7 +35,7 @@ if ((is_numeric($age)) == true) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0-beta1/css/bootstrap.min.css' integrity='sha512-o/MhoRPVLExxZjCFVBsm17Pkztkzmh7Dp8k7/3JrtNCHh0AQ489kwpfA3dPSHzKDe8YCuEhxXq3Y71eb/o6amg==' crossorigin='anonymous'/>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0-beta1/css/bootstrap.min.css' integrity='sha512-o/MhoRPVLExxZjCFVBsm17Pkztkzmh7Dp8k7/3JrtNCHh0AQ489kwpfA3dPSHzKDe8YCuEhxXq3Y71eb/o6amg==' crossorigin='anonymous' />
     <title>Snack 2</title>
 </head>
 
@@ -52,7 +52,7 @@ if ((is_numeric($age)) == true) {
             </div>
             <div class="mb-3">
                 <label for="mailInput" class="form-label">Mail</label>
-                <input type="mail" class="form-control <?php echo !$isMailValid ? 'is-invalid': '' ?>" id="mailInput" name='mail' aria-describedby="emailHelp" value='<?php echo $mail ?>' />
+                <input type="mail" class="form-control <?php echo !$isMailValid ? 'is-invalid' : '' ?>" id="mailInput" name='mail' aria-describedby="emailHelp" value='<?php echo $mail ?>' />
                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                 <div class="invalid-feedback">
                     Invalid email
