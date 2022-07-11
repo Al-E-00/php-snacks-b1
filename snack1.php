@@ -10,38 +10,38 @@ Olimpia Milano - Cantù | 55-60 -->
 $playedMatch = [
     [
         'calendarStage' => 'Olimpia',
-        'homeTeam' => 'cagliari',
-        'visitingTeam' => 'pescara',
-        'homeScore' => '3',
-        'visitingScore' => '2'
+        'homeTeam' => 'Cagliari',
+        'visitingTeam' => 'Pescara',
+        'homeScore' => rand(1, 150),
+        'visitingScore' => rand(1, 150)
     ],
     [
         'calendarStage' => 'Manfredonia',
-        'homeTeam' => 'abruzzo',
-        'visitingTeam' => 'napoli',
-        'homeScore' => '3',
-        'visitingScore' => '5'
+        'homeTeam' => 'Abruzzo',
+        'visitingTeam' => 'Napoli',
+        'homeScore' => rand(1, 150),
+        'visitingScore' => rand(1, 150)
     ],
     [
         'calendarStage' => 'Riccione',
-        'homeTeam' => 'roma',
-        'visitingTeam' => 'lazio',
-        'homeScore' => '0',
-        'visitingScore' => '1'
+        'homeTeam' => 'Roma',
+        'visitingTeam' => 'Lazio',
+        'homeScore' => rand(1, 150),
+        'visitingScore' => rand(1, 150)
     ],
     [
         'calendarStage' => 'Ponza',
-        'homeTeam' => 'puglia',
-        'visitingTeam' => 'brescia',
-        'homeScore' => '1',
-        'visitingScore' => '1'
+        'homeTeam' => 'Puglia',
+        'visitingTeam' => 'Brescia',
+        'homeScore' => rand(1, 150),
+        'visitingScore' => rand(1, 150)
     ],
     [
         'calendarStage' => 'Castellammare',
-        'homeTeam' => 'firenze',
-        'visitingTeam' => 'liguria',
-        'homeScore' => '2',
-        'visitingScore' => '2'
+        'homeTeam' => 'Firenze',
+        'visitingTeam' => 'Liguria',
+        'homeScore' => rand(1, 150),
+        'visitingScore' => rand(1, 150)
     ]
 ];
 
@@ -55,16 +55,21 @@ $i = 0;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0-beta1/css/bootstrap.min.css' integrity='sha512-o/MhoRPVLExxZjCFVBsm17Pkztkzmh7Dp8k7/3JrtNCHh0AQ489kwpfA3dPSHzKDe8YCuEhxXq3Y71eb/o6amg==' crossorigin='anonymous' />
     <title>Snack 1</title>
 </head>
 
 <body>
-    <?php for ($i; $i < count($playedMatch); $i++) {
-        $match = $playedMatch[$i];
-    ?>
-        <?php echo $match['calendarStage'] . ' ' . $match['homeTeam'] . '-' . $match['visitingTeam'] . ' | ' . $match['homeScore'] . '-' . $match['visitingScore']  ?>
-        <br>
-    <?php } ?>
+    <div class="container">
+        <div class="list-group">
+            <?php for ($i; $i < count($playedMatch); $i++) {
+                $match = $playedMatch[$i];
+                echo "<li>";
+                echo $match['calendarStage'] . ' : ' . $match['homeTeam'] . '-' . $match['visitingTeam'] . ' | ' . $match['homeScore'] . '-' . $match['visitingScore'];
+                echo "</li>";
+            } ?>
+        </div>
+    </div>
 </body>
 
 </html>
