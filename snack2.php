@@ -26,6 +26,31 @@ if ((is_numeric($age)) == true) {
     $isAgeValid = true;
 }
 
+
+$errorsBag = [];
+if (strlen($name) > 3) {
+    $errorsBag["name"][] = "Name have to be at least 3 characters";
+}
+
+if (strpos($mail, "@") <= 2) {
+    $errorsBag["mail"][] = "Email require @";
+}
+
+if (strpos($mail, ".") <= 4) {
+    $errorsBag["mail"][] = "Email require . after @";
+}
+
+if (!is_numeric($age)) {
+    $errorsBag["age"][] = "Age need to be a number";
+}
+
+if ((is_numeric($age)) < 18) {
+    $errorsBag["age"][] = "User need to be adult";
+}
+
+$isDataValid = false;
+var_dump($errorsBag);
+
 ?>
 
 <!DOCTYPE html>
@@ -42,12 +67,17 @@ if ((is_numeric($age)) == true) {
 <body>
 
     <div class="container">
+        <?php if ($isDataValid === false) {
+            print("accesso negato");
+        } else {
+            print("accesso consentito");
+        } ?>
         <form>
             <div class="mb-3">
                 <label for="nameInput" class="form-label <?php echo !$isNameValid ? 'is-invalid' : '' ?>">Name</label>
                 <input type="text" class="form-control" id="nameInput" name='name' value='<?php echo $name ?>' />
                 <div class="invalid-feedback">
-                    Invalid name
+                    Name not valid
                 </div>
             </div>
             <div class="mb-3">
