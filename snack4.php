@@ -1,7 +1,7 @@
 <?php
 
 $numberArray = [];
-
+$counter = 0;
 $i = 0;
 
 for ($i; $i < 15; $i++) {
@@ -11,6 +11,8 @@ for ($i; $i < 15; $i++) {
     } else {
         $i--;
     }
+    $counter++;
 }
+var_dump($counter);
 
 var_dump($numberArray);
