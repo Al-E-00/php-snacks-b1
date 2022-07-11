@@ -86,7 +86,7 @@ $i = 0;
                             ?> </p>
                         <p class='text-warning ps-3'> Grade average:
                             <?php
-                            echo $average = array_sum($student['grades']) / count($student['grades']);
+                                echo $average = round(array_sum(array_values($student['grades'])) / count($student['grades']), 1);
                             ?>
                         </p>
                     </div>
